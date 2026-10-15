@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agentic Text-to-SQL with Table-Level Retrieval for Protective Relay Settings</title>
+<meta name="description" content="BRACIS 2026 paper: an LLM agent answers questions over protective relay manuals with table-level retrieval and SQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2f63;
+    --blue: #0067ac;
+    --pale: #eef4fb;
+    --ink: #1f2328;
+    --muted: #5b6470;
+    --rule: #d5e2f0;
+    --paper: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --navy: #a9c8f0;
+      --blue: #6fb1e8;
+      --pale: #16202c;
+      --ink: #e6e9ee;
+      --muted: #a2abb7;
+      --rule: #2a3a4d;
+      --paper: #0d1117;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.6 "Fira Sans", system-ui, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 56px; }
+  .venue { color: var(--blue); font-weight: 600; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
+  h1 { color: var(--navy); font-size: clamp(26px, 5vw, 36px); line-height: 1.2; margin: 8px 0 16px; }
+  .authors { margin: 0; }
+  .affil { color: var(--muted); font-size: 15px; margin: 4px 0 24px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
+  .button {
+    display: inline-block; padding: 10px 18px; border-radius: 6px;
+    font-weight: 600; text-decoration: none; border: 2px solid var(--blue);
+  }
+  .button.primary { background: var(--blue); color: #fff; }
+  .button.secondary { color: var(--blue); }
+  h2 { color: var(--navy); font-size: 20px; margin: 32px 0 8px; }
+  .abstract { background: var(--pale); border-radius: 6px; padding: 16px 20px; }
+  pre {
+    background: var(--pale); border-radius: 6px; padding: 16px; overflow-x: auto;
+    font-size: 13px; line-height: 1.5;
+  }
+  .note { color: var(--muted); font-size: 14px; }
+  a { color: var(--blue); }
+  footer { border-top: 1px solid var(--rule); margin-top: 40px; padding-top: 16px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="venue">BRACIS 2026 · Intelligent Systems (LNCS)</div>
+  <h1>Agentic Text-to-SQL with Table-Level Retrieval for Protective Relay Settings</h1>
+  <p class="authors"><strong>Gustavo L. B. Pereira</strong>, João Pedro G. Fernandes, João Pedro A. F. Matos, Vinícius A. Aguiar, Sávio S. T. de Oliveira, Anderson S. Soares</p>
+  <p class="affil">Institute of Informatics, Federal University of Goiás (UFG) · Center of Excellence in Artificial Intelligence (CEIA)</p>
+
+  <div class="actions">
+    <a class="button primary" href="pereira2026-bracis-accepted-manuscript.pdf">PDF (accepted manuscript)</a>
+    <a class="button secondary" href="https://doi.org/10.1007/978-3-032-39892-5_35">Version of Record (Springer)</a>
+  </div>
+
+  <h2>Abstract</h2>
+  <div class="abstract">
+    <p>Protective relay configuration data is critical for power system operations, yet it remains locked in heterogeneous PDF manuals from multiple manufacturers with non-standardized formats and low-semantic parameter names. We propose an agentic Text-to-SQL system for natural-language access to relay configuration parameters, built on a structured relational database extracted from PDF tables and equipped with a ReAct-style agent that combines semantic retrieval with SQL execution. We systematically compare two retrieval strategies: Section-Level Retrieval (SLR), which indexes full document sections, and Table-Level Retrieval (TLR), which indexes per-table LLM-generated descriptions. On a domain-specific evaluation set of 112 questions over relay manuals from seven manufacturers, TLR achieves mean factual correctness of [0.87; 0.91], outperforming SLR with the same backbone at lower token cost and latency, with the advantage consistent across both backbone models evaluated. The results indicate that retrieval granularity and backbone capability each contribute separately to accuracy and efficiency, with the strongest configuration combining table-level retrieval and the more capable backbone.</p>
+  </div>
+
+  <h2>Cite</h2>
+<pre>@inproceedings{pereira2026agentic,
+  title     = {Agentic Text-to-SQL with Table-Level Retrieval for Protective Relay Settings},
+  author    = {Pereira, Gustavo L. B. and Fernandes, Jo{\~a}o Pedro G. and Matos, Jo{\~a}o Pedro A. F.
+               and Aguiar, Vin{\'i}cius A. and de Oliveira, S{\'a}vio S. T. and Soares, Anderson S.},
+  booktitle = {Intelligent Systems},
+  editor    = {Recamonde-Mendoza, Mariana and Barros, Rodrigo C.},
+  series    = {Lecture Notes in Computer Science},
+  pages     = {532--546},
+  publisher = {Springer Nature Switzerland},
+  year      = {2027},
+  doi       = {10.1007/978-3-032-39892-5_35}
+}</pre>
+
+  <p class="note">This version of the contribution has been accepted for publication, after peer review (when applicable) but is not the Version of Record and does not reflect post-acceptance improvements, or any corrections. The Version of Record is available online at: <a href="http://dx.doi.org/10.1007/978-3-032-39892-5_35">http://dx.doi.org/10.1007/978-3-032-39892-5_35</a>. Use of this Accepted Version is subject to the publisher's Accepted Manuscript terms of use <a href="https://www.springernature.com/gp/open-research/policies/accepted-manuscript-terms">https://www.springernature.com/gp/open-research/policies/accepted-manuscript-terms</a>.</p>
+
+  <footer>
+    Funded by P&amp;D CEMIG/ANEEL PD-04950-D0677/2023 with support of CEIA and MCTI/EMBRAPII grant 057/2023, and by INCT TILD-IAR grant 408490/2024-1.<br>
+    Contact: <a href="mailto:gustavobueno@discente.ufg.br">gustavobueno@discente.ufg.br</a>
+  </footer>
+</main>
+</body>
+</html>
